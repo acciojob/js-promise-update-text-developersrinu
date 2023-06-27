@@ -1,9 +1,16 @@
-//your JS code here. If required.
-function rr(){
-let p = new Promise((resolve,reject)=>{
-	setTimeOut(()=>{
-		reslove('hello,world');
-	},1000)
-})
+function updateTextAfterDelay() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Hello, world!");
+    }, 1000);
+  });
 }
-rr();
+
+updateTextAfterDelay()
+  .then((message) => {
+    const outputElement = document.getElementById("output");
+    outputElement.innerHTML = message;
+  })
+  .catch((error) => {
+    console.error(error);
+  });
